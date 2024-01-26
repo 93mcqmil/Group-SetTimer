@@ -1,0 +1,89 @@
+@import "mixins";
+@import "colors";
+.analogContainer {
+  background-color: $background-white;
+  color: $background-black;
+  @include basicFlexBox;
+}
+
+.headerText {
+  font-size: 20px;
+  color: $blackFont;
+  display: flex;
+  width: 279px;
+  height: 32px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2px;
+  text-align: center;
+  transform: translate(25%, 25%);
+  margin-top: -25px;
+}
+.analogClockContainer {
+  position: relative;
+  margin: 12.5rem auto auto auto;
+}
+
+#secondHand,
+#minuteHand {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: 41% 96%; // Set the rotation origin to the bottom center
+  height: 11rem;
+}
+
+#secondHand {
+  transform: translate(-50%, -100%) rotate(0deg); // Initial rotation
+  animation: rotateClockwise 60s linear infinite; // Rotate every 60 seconds
+}
+
+#minuteHand {
+  transform: translate(-50%, -100%) rotate(0deg); // Initial rotation
+  animation: rotateClockwise 3600s linear infinite; // Rotate every 3600 seconds (1 hour)
+}
+.tempBox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #000;
+  z-index: 1000;
+}
+// @keyframes rotateClockwise {
+//   to {
+//     transform: translate(-50%, -100%) rotate(360deg);
+//   }
+// }
+
+// @keyframes rotateMinuteHand {
+//   to {
+//     transform: translate(-50%, -100%) rotate(360deg);
+//   }
+// }
+.greyButton {
+  @include buttonStyle($background-white);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  width: auto;
+  height: auto;
+  display: inline-flex;
+  background-color: $background-white;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 5px;
+  border: 1px solid #222;
+  opacity: 0.6;
+}

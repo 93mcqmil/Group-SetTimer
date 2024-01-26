@@ -1,0 +1,35 @@
+@import "fonts";
+@import "colors";
+@import "mixins";
+
+.navigationLogo {
+  @include navLogoFinish;
+}
+
+.menu-Container {
+  text-align: center;
+  list-style-type: none;
+  padding: 5rem;
+  cursor: pointer;
+
+
+  li {
+    margin: 2rem;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    font-family: $blackFont;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
